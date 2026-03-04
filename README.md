@@ -36,3 +36,46 @@ This runs the demo block, which prints:
 ---
 
 ## Class Structure
+
+Each stakeholder is scored across three dimensions (0–10):
+
+- **data_access** — visibility into platform data and behavioral profiles
+- **revenue_share** — share of platform-generated revenue
+- **decision_power** — influence over platform rules and algorithm
+
+An **autonomy score** is automatically calculated as the mean of these three values.
+
+---
+
+## Proposed Classes
+
+| Existing | Proposed |
+|----------|----------|
+| `User` | `EmpoweredUser` |
+| `Creator` | `EmpoweredCreator` |
+| `PlatformOwner` | `AccountablePlatform` |
+
+---
+
+## Migration Functions
+```python
+migrate_user_to_empowered(old_user)
+migrate_creator_to_empowered(old_creator)
+migrate_platform_to_accountable(old_platform)
+```
+
+Each function takes an instance of the existing class, preserves its name, and returns an instance of the proposed class — printing a before/after diff of all power attributes.
+
+---
+
+## Context
+
+This project accompanies the *Power in Social Media* written report analyzing TikTok's stakeholder ecosystem. The three proposed modifications modeled in code are:
+
+1. **Data portability rights** for users
+2. **Transparent, fixed revenue splits** for creators
+3. **Independent algorithmic oversight** of the platform
+
+---
+
+*ICS 425 — Ethan C. | University of Hawaii at Manoa*
